@@ -40,6 +40,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 " One colorscheme pack to rule them all!
 Plugin 'flazz/vim-colorschemes'
+" Make Vim persist editing state without fuss
+Plugin 'kopischke/vim-stay'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
