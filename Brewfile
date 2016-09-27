@@ -1,0 +1,11 @@
+brew "git"
+brew "vim"
+brew "wget"
+brew "tmux"
+brew "cmake"
+brew "ctags"
+brew "python"
+
+tap "homebrew/dupes"
+brew "grep"
+brew "openssh"
