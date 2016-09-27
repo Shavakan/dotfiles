@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = ChangWon Lee
+#	email = chiyah92@gmail.com
+[core]
+	editor = vim
+[user]
+	name = ChangWon Lee
+	email = chiyah92@gmail.com
