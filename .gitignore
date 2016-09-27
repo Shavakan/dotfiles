@@ -1,0 +1,12 @@
+# .gitignore file for dotfiles
+
+# First, ignore everything
+*
+# Then whitelist the following items
+!.gitignore
+!.gitconfig
+!.install.sh
+!.vimrc
+!.bashrc
+!.bash_profile
+!Brewfile
