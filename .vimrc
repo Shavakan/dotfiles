@@ -58,18 +58,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "" ----------------------------------------------------------------
 
-"" Editor ---------------------------------------------------------
-set mouse=a                             " -- mouse cursor on
-set expandtab                           " -- tab as spaces
-set noet bs=2 ts=4 sw=8 sts=0           " -- tabstop
-set noai nosi hls is ic cf ws scs magic " -- search
-set nu ru sc wrap ls=2 lz               " -- appearance
-
-" encoding and file format
-set fenc=utf-8 ff=unix ffs=unix,dos,mac
-set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,latin2,ucs2-le
-"" ----------------------------------------------------------------
-
 "" Syntax ---------------------------------------------------------
 syn enable
 syn sync fromstart
@@ -79,6 +67,18 @@ colorscheme Tomorrow-Night
 hi Normal ctermbg=none
 hi NonText ctermbg=none
 " -----------------------------------------------------------------
+
+"" Editor ---------------------------------------------------------
+set mouse=a                             " -- mouse cursor on
+set noet bs=2 ts=4 sw=8 sts=0           " -- tabstop
+set noai nosi hls is ic cf ws scs magic " -- search
+set nu ru sc wrap ls=2 lz               " -- appearance
+set expandtab                           " -- tab as spaces
+
+" encoding and file format
+set fenc=utf-8 ff=unix ffs=unix,dos,mac
+set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,latin2,ucs2-le
+"" ----------------------------------------------------------------
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" CHANGELOGS :
