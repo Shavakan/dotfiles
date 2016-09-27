@@ -40,7 +40,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 " One colorscheme pack to rule them all!
 Plugin 'flazz/vim-colorschemes'
-Plugin 'chriskempson/vim-tommorow-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
