@@ -124,3 +124,5 @@ LOCATION=':\033[00;94m\]\W/'
 BRANCH=' \033[00;33m\]at branch [ $(git_branch) ]\[\033[00m\]\n\$ '
 PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
