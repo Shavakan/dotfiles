@@ -20,4 +20,7 @@ case "$1" in
         source ~/.rvm/scripts/rvm
         rvm list
     ;;
+    mac)
+        xcode-select --install
+    ;;
 esac
