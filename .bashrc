@@ -126,3 +126,4 @@ PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.git/git-completion.bash

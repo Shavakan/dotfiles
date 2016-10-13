@@ -14,6 +14,9 @@ case "$1" in
         echo "$ cat ~/.ssh/id_rsa.pub"
         cat ~/.ssh/id_rsa.pub
     ;;
+    git)
+        cd ~/.git/ && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -
+    ;;
     ruby)
         gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
         \curl -sSL https://get.rvm.io | bash -s stable --ruby

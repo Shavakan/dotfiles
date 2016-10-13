@@ -104,6 +104,7 @@ fi
 #alias l='ls -CF'
 alias pu='pushd .'
 alias po='popd'
+alias cdw='cd /Users/shavakan/Develop/'   # Mac OS only
 
 
 # enable programmable completion features (you don't need to enable
@@ -126,3 +127,4 @@ PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.git/git-completion.bash
