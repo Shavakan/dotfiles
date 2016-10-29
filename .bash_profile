@@ -128,3 +128,6 @@ PS2='\[\033[01;36m\]>'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.git/git-completion.bash
+
+# thefuck alias
+eval $(thefuck --alias)

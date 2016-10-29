@@ -14,3 +14,9 @@ brew "libxml2"
 tap "homebrew/dupes"
 brew "grep"
 brew "openssh"
+
+brew "mongodb"
+tap "homebrew/services"
+
+brew "mas"
+brew "thefuck"
