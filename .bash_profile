@@ -131,3 +131,6 @@ source ~/.git/git-completion.bash
 
 # thefuck alias
 eval $(thefuck --alias)
+
+# Elixir bin path
+export PATH="$PATH:/usr/local/bin/elixir"/
