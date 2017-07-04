@@ -1,5 +1,49 @@
 #!/bin/bash
 
+###############################################################################
+# Shavakan 17.07.03 :: Word of Acknoledgement
+# This dotfiles structure and install scripts are greatly motivated by the works of webpro
+# (https://github.com/webpro/dotfiles).
+#
+###############################################################################
+
+# Get current dir (so this script can run from everywhere)
+
+export DOTFILES_DIR DOTFILES_CACHE EXTRA_DIR
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
+EXTRA_DIR="$HOME/.extra"
+
+# Import common functions
+
+. "$DOTFILES_DIR/system/.function"
+
+# Update dotfiles themselves first
+
+echo "Updating dotfiles themselves..."
+if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; fi
+
+# Create symlinks
+
+echo "Creating symlinks for dotfiles..."
+ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~
+ln -sfv "$DOTFILES_DIR/system/.inputrc" ~
+ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/system/.vimrc" ~
+
+# Create SSH keygen (RSA pubkey) if one does not exist.
+
+if [ -f ~/.ssh/id_rsa.pub ] 
+then
+    echo "RSA pubkey already exists. Skip keygen."
+else
+    echo "Creating RSA pubkey..."
+    ssh-keygen -t rsa -b 4096 -C "chiyah92@gmail.com"
+    echo "$cat ~/.ssh/id_rsa.pub" 
+    cat ~/.ssh/id_rsa.pub 
+    echo "RSA pubkey generated."
+fi
+
 case "$1" in
     brew)
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -13,6 +57,7 @@ case "$1" in
         ssh-keygen -t rsa -b 4096 -C "chiyah92@gmail.com"
         echo "$ cat ~/.ssh/id_rsa.pub"
         cat ~/.ssh/id_rsa.pub
+        echo "RSA pubkey generated."
     ;;
     git)
         cd ~ && mkdir .git && cd ~/.git/ && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -

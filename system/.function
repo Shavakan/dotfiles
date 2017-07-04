@@ -1,0 +1,12 @@
+# Get named var (usage: get "VAR_NAME")
+
+get() {
+  echo "${!1}"
+}
+
+# Executable
+
+is-executable() {
+  local BIN=$(command -v "$1" 2>/dev/null)
+  if [[ ! $BIN == "" && -x $BIN ]]; then true; else false; fi
+}
