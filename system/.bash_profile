@@ -146,3 +146,9 @@ export PATH="$PATH:/usr/local/mysql/bin/"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Docker
+export DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_MACHINE_HOST_NAME=default
+export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/default
+export DOCKER_TLS_VERIFY=1
