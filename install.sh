@@ -30,6 +30,7 @@ ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/system/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/system/.vimrc" ~
+ln -sfv "$DOTFILES_DIR/Brewfile" ~
 
 # Create SSH keygen (RSA pubkey) if one does not exist.
 
@@ -47,6 +48,7 @@ fi
 case "$1" in
     brew)
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew update
         brew tap homebrew/bundle
         cd ~ && brew bundle && cd -
     ;;
@@ -70,5 +72,31 @@ case "$1" in
     ;;
     mac)
         xcode-select --install
+        sudo xcodebuild -license
     ;;
+    all)
+	# Install Homebrew
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	xcode-select --install
+
+	# Install Homebrew packages
+	brew update
+	brew install redis mysql golang node npm docker-machine git python python3 ruby vim tmux
+
+	# Install Homebrew Cask
+	brew tap caskroom/cask
+
+	# Install Homebrew Cask packages
+	brew cask install intellij-idea sequel-pro slack java couchbase-server-enterprise
+
+	# Gem Update
+	gem update --system
+	gem install ecl
+
+	pip install -U pip
+	pip install awscli virtualenv virtualenvwrapper
+
+	# Disable Character Accent Menu
+	defaults write -g ApplePressAndHoldEnabled -bool false
 esac

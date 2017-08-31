@@ -104,7 +104,7 @@ fi
 #alias l='ls -CF'
 alias pu='pushd .'
 alias po='popd'
-alias cdw='cd /Users/shavakan/Develop/'   # Mac OS only
+alias cdw='cd /Users/$(id -un)/workspace/'   # Mac OS only
 
 
 # enable programmable completion features (you don't need to enable
@@ -133,4 +133,16 @@ source ~/.git/git-completion.bash
 eval $(thefuck --alias)
 
 # Elixir bin path
-export PATH="$PATH:/usr/local/bin/elixir"/
+export PATH="$PATH:/usr/local/bin/elixir"
+
+# Go paths
+export GOPATH=$HOME/workspace/go
+export GOBIN=$GOPATH/bin
+
+# Mysql path
+export PATH="$PATH:/usr/local/mysql/bin/"
+
+# Python mkvirtualenvwrapper paths
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace
+source /usr/local/bin/virtualenvwrapper.sh
