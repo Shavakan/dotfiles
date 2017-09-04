@@ -4,6 +4,7 @@ brew "wget"
 brew "tmux"
 brew "cmake"
 brew "ctags"
+brew "ack"
 
 brew "python"
 brew "python3"
