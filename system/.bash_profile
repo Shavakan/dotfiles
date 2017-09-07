@@ -129,6 +129,13 @@ PS2='\[\033[01;36m\]>'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.git/git-completion.bash
 
+# macOS Notification
+# Usage: (some task that takes long time); notify End Task
+notify () {
+    osascript -e "display notification \"$*\" sound name \"Glass\" with title \"Shell Notification\""
+    say "$*"
+}
+
 # thefuck alias
 eval $(thefuck --alias)
 
@@ -138,6 +145,7 @@ export PATH="$PATH:/usr/local/bin/elixir"
 # Go paths
 export GOPATH=$HOME/workspace/go
 export GOBIN=$GOPATH/bin
+export PATH="$PATH:$GOPATH:$GOBIN"
 
 # Mysql path
 export PATH="$PATH:/usr/local/mysql/bin/"
@@ -152,3 +160,6 @@ export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_MACHINE_HOST_NAME=default
 export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/default
 export DOCKER_TLS_VERIFY=1
+
+source $HOME/vault.sh
+source $HOME/alias_devsisters.sh
