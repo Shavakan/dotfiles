@@ -27,10 +27,17 @@ if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES
 
 echo "Creating symlinks for dotfiles..."
 ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~
+ln -sfv "$DOTFILES_DIR/alias/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/system/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/system/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
+
+# Reload new bashrc
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
+echo "bashrc reloaded"
 
 # Create SSH keygen (RSA pubkey) if one does not exist.
 

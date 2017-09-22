@@ -82,6 +82,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Company-only aliases (not checked-in to remote repository)
+if [ -f ~/.devsisters_aliases ]; then
+    . ~/.devsisters_aliases
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
@@ -102,10 +107,6 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-alias pu='pushd .'
-alias po='popd'
-alias cdw='cd /Users/$(id -un)/workspace/'   # Mac OS only
-
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -160,6 +161,10 @@ export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_MACHINE_HOST_NAME=default
 export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/default
 export DOCKER_TLS_VERIFY=1
+# for Mac you apparently need to unset Docker env vars
+unset ${!DOCKER*}
 
-source $HOME/vault.sh
-source $HOME/alias_devsisters.sh
+if [ -f $HOME/vault.sh ]; then
+    source $HOME/vault.sh
+fi
+
