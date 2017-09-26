@@ -44,6 +44,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'kopischke/vim-stay'
 " Vastly improved Javascript indentation and syntax support in Vim
 Plugin 'pangloss/vim-javascript'
+" commentary.vim: comment stuff out
+Plugin 'tpope/vim-commentary'
+" `self-contained and faily explanatory` agglomeration of HashiVim plugins
+Plugin 'hashivim/vim-hashicorp-tools'
+" A (Neo)Vim Autocompletion and linter for Terraform, a HashiCorp tool
+Plugin 'juliosueiras/vim-terraform-completion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +85,7 @@ if has("autocmd")
         au FileType html setl ts=8 sw=2 sts=2 et
         au FileType css setl ts=8 sw=4 sts=4 et
         au FileType javascript setl ts=8 sw=2 sts=2 et
+        au FileType tf setl ts=8 sw=2 sts=2 et
         au FileType cpp setl ts=8 sw=4 sts=4 et
         au FileType java setl ts=4 sw=4 sts=0 noet
         au FileType php setl ts=8 sw=4 sts=4 et
@@ -126,6 +133,11 @@ set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,latin2,ucs2-le
 "" Configuration Variables ----------------------------------------
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
+" vim-terraform
+let g:terraform_align=1
+let g:terraform_remap_spacebar=1
+autocmd FileType terraform setlocal commentstring=#%s
 "" ----------------------------------------------------------------
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
