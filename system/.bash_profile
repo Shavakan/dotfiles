@@ -168,3 +168,5 @@ if [ -f $HOME/vault.sh ]; then
     source $HOME/vault.sh
 fi
 
+# AWS CLI Completer
+complete -C '$(which aws_completer)' aws

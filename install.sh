@@ -1,10 +1,12 @@
 #!/bin/bash
 
 ###############################################################################
-# Shavakan 17.07.03 :: Word of Acknoledgement
+# Shavakan 17.07.03 :: Word of Acknowledgement
 # This dotfiles structure and install scripts are greatly motivated by the works of webpro
 # (https://github.com/webpro/dotfiles).
 #
+# TODO: Add README/help option
+# TODO: Make all the default options non-default. Make help default option instead.
 ###############################################################################
 
 # Get current dir (so this script can run from everywhere)
@@ -32,12 +34,6 @@ ln -sfv "$DOTFILES_DIR/system/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/system/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
-
-# Reload new bashrc
-if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
-fi
-echo "bashrc reloaded"
 
 # Create SSH keygen (RSA pubkey) if one does not exist.
 
@@ -89,7 +85,9 @@ case "$1" in
 
 	# Install Homebrew packages
 	brew update
+	# TODO: Move these into Brewfile
 	brew install redis mysql golang node npm docker-machine git python python3 ruby vim tmux
+	brew bundle
 
 	# Install Homebrew Cask
 	brew tap caskroom/cask
@@ -104,6 +102,16 @@ case "$1" in
 	pip install -U pip
 	pip install awscli virtualenv virtualenvwrapper
 
+	# AWS CLI
+	pip install awscli --upgrade --user
+
 	# Disable Character Accent Menu
 	defaults write -g ApplePressAndHoldEnabled -bool false
 esac
+
+# Reload new bashrc
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
+echo "bashrc reloaded"
+
