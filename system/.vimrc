@@ -80,7 +80,7 @@ if has("autocmd")
         " filetype-specific configurations
         au FileType python setl ts=8 sw=4 sts=4 et
         au FileType yaml setl ts=8 sw=2 sts=2 et
-        au FileType sh setl ts=8 sw=4 sts=4 et
+        au FileType sh setl ts=2 sw=4 sts=4 et
         au FileType c setl ts=8 sw=4 sts=4 et
         au FileType html setl ts=8 sw=2 sts=2 et
         au FileType css setl ts=8 sw=4 sts=4 et

@@ -12,6 +12,8 @@ brew "ruby"
 brew "redis"
 brew "mysql"
 brew "golang"
+brew "node"
+brew "npm"
 brew "docker"
 
 brew "gnupg"
