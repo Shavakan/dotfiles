@@ -12,7 +12,7 @@ brew "ruby"
 brew "redis"
 brew "mysql"
 brew "golang"
-brew "docker-machine"
+brew "docker"
 
 brew "gnupg"
 brew "gnupg2"
@@ -28,5 +28,12 @@ tap "homebrew/services"
 brew "mas"
 brew "thefuck"
 
-tap caskroom/cask
-cask install intellij-idea sequel-pro slack java couchbase-server-enterprise
+cask_args appdir: "/Applications"
+tap "caskroom/cask"
+cask "intellij-idea"
+cask "sequel-pro"
+cask "slack"
+cask "java"
+cask "couchbase-server-enterprise"
+cask "notion"
+cask "appcleaner"
