@@ -98,7 +98,8 @@ case "$1" in
 		ecl
 
 	pip install -U pip
-	pip install awscli virtualenv virtualenvwrapper
+	pip install awscli virtualenv
+	sudo pip install virtualenvwrapper
 
 	# AWS CLI
 	pip install awscli --upgrade --user

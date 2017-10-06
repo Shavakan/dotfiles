@@ -127,7 +127,7 @@ BRANCH=' \033[00;33m\]at branch [ $(git_branch) ]\[\033[00m\]\n\$ '
 PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 
-export PATH="$PATH:/usr/local/sbin/"
+export PATH="$PATH:/usr/local/sbin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.git/git-completion.bash
@@ -151,7 +151,7 @@ export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOPATH:$GOBIN"
 
 # Mysql path
-export PATH="$PATH:/usr/local/mysql/bin/"
+export PATH="$PATH:/usr/local/mysql/bin"
 
 # Python mkvirtualenvwrapper paths
 export WORKON_HOME=$HOME/.virtualenvs
