@@ -6,6 +6,10 @@ alias po='popd'
 
 alias cdw='cd $HOME/workspace/ && ls'
 
+alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
+
 alias dp='docker ps'
 alias dsp='docker system prune'
 
