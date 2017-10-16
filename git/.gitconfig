@@ -6,9 +6,14 @@
 [core]
 	editor = vim
 [user]
-	name = ChangWon Lee
-	email = chiyah92@gmail.com
+	name = Shavakan
+	email = changwon.lee@devsisters.com
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
 	tool = vimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
