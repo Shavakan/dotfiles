@@ -82,30 +82,33 @@ case "$1" in
 		xcode-select --install
 		sudo xcodebuild -license
 	;;
+	redis)
+		redis-server "/usr/local/etc/redis.conf"
+		echo "$ redis-cli ping" && redis-cli ping
+	;;
 	all)
 	# Install Homebrew
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	xcode-select --install
+	    xcode-select --install
 
-	# Install Homebrew packages
-	brew update
-	brew bundle
+	    # Install Homebrew packages
+	    brew update
+	    brew bundle
 
-	# Gem Update
-	gem update --system
-	gem install ecl
-		ecl
+	    # Gem Update
+	    gem update --system
+	    gem install ecl
 
-	pip install -U pip
-	pip install awscli virtualenv
-	sudo pip install virtualenvwrapper
+	    pip install -U pip
+	    pip install awscli virtualenv
+	    sudo pip install virtualenvwrapper
 
-	# AWS CLI
-	pip install awscli --upgrade --user
+	    # AWS CLI
+	    pip install awscli --upgrade --user
 
-	# Disable Character Accent Menu
-	defaults write -g ApplePressAndHoldEnabled -bool false
+	    # Disable Character Accent Menu
+	    defaults write -g ApplePressAndHoldEnabled -bool false
 esac
 
 # Reload new bashrc

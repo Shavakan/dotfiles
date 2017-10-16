@@ -84,7 +84,7 @@ if has("autocmd")
         au FileType c setl ts=8 sw=4 sts=4 et
         au FileType html setl ts=8 sw=2 sts=2 et
         au FileType css setl ts=8 sw=4 sts=4 et
-        au FileType javascript setl ts=8 sw=2 sts=2 et
+        au FileType javascript setl ts=2 sw=2 sts=2 et
         au FileType tf setl ts=8 sw=2 sts=2 et
         au FileType cpp setl ts=8 sw=4 sts=4 et
         au FileType java setl ts=4 sw=4 sts=0 noet
