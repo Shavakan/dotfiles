@@ -18,7 +18,7 @@ EXTRA_DIR="$HOME/.extra"
 
 # Import common functions
 
-. "$DOTFILES_DIR/system/.function"
+. "$DOTFILES_DIR/system/function"
 
 # Update dotfiles themselves first
 
@@ -28,14 +28,14 @@ if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES
 # Create symlinks
 
 echo "Creating symlinks for dotfiles..."
-ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~
-ln -sfv "$DOTFILES_DIR/alias/.bash_aliases" ~
-ln -sfv "$DOTFILES_DIR/system/.inputrc" ~
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/system/.vimrc" ~
+ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~/.bash_profile
+ln -sfv "$DOTFILES_DIR/alias/bash_aliases" ~/.bash_aliases
+ln -sfv "$DOTFILES_DIR/system/.inputrc" ~/.inputrc
+ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
+ln -sfv "$DOTFILES_DIR/system/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
+ln -sfv "$DOTFILES_DIR/git/gitignore_global" ~/.gitignore_global
 
-# TODO: Create workspace directory if one does not exist
 if [ ! -d "$HOME/workspace" ]; then
 	mkdir $HOME/workspace
 fi
@@ -70,7 +70,9 @@ case "$1" in
 		echo "RSA pubkey generated."
 	;;
 	git)
-		cd ~ && mkdir .git && cd ~/.git/ && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -
+		if [ ! -d "$HOME/.git" ]; then
+			cd ~ && mkdir .git && cd ~/.git/ && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -
+		fi
 	;;
 	ruby)
 		gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -88,27 +90,27 @@ case "$1" in
 	;;
 	all)
 	# Install Homebrew
-	    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	    xcode-select --install
+		xcode-select --install
 
-	    # Install Homebrew packages
-	    brew update
-	    brew bundle
+		# Install Homebrew packages
+		brew update
+		brew bundle
 
-	    # Gem Update
-	    gem update --system
-	    gem install ecl
+		# Gem Update
+		gem update --system
+		gem install ecl
 
-	    pip install -U pip
-	    pip install awscli virtualenv
-	    sudo pip install virtualenvwrapper
+		pip install -U pip
+		pip install awscli virtualenv
+		sudo pip install virtualenvwrapper
 
-	    # AWS CLI
-	    pip install awscli --upgrade --user
+		# AWS CLI
+		pip install awscli --upgrade --user
 
-	    # Disable Character Accent Menu
-	    defaults write -g ApplePressAndHoldEnabled -bool false
+		# Disable Character Accent Menu
+		defaults write -g ApplePressAndHoldEnabled -bool false
 esac
 
 # Reload new bashrc

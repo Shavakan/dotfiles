@@ -1,0 +1,25 @@
+
+# List of custom aliases
+
+alias pu="pushd ."
+alias po="popd"
+
+alias cdw="cd $HOME/workspace/ && ls"
+alias f="fuck"
+
+# Git aliases
+alias gs="echo 'git status' && git status"
+alias gsl="echo 'git stash list' && git stash list"
+alias gsp="echo 'git stash pop' && git stash pop"
+alias gd="echo 'git diff' && git diff"
+alias gds="echo 'git diff --staged' && git diff --staged"
+alias gfp="echo 'git fetch --prune' && git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
+alias gfpdr="echo 'git fetch --prune --dry-run' && git fetch --prune --dry-run"
+
+# Docker aliases
+alias dp="echo 'docker ps' && docker ps"
+alias dsp="echo 'docker system prune' && docker system prune"
+
+# AWS CLI Eclair alias
+alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl"
+
