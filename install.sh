@@ -28,9 +28,9 @@ if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES
 # Create symlinks
 
 echo "Creating symlinks for dotfiles..."
-ln -sfv "$DOTFILES_DIR/system/.bash_profile" ~/.bash_profile
+ln -sfv "$DOTFILES_DIR/system/bash_profile" ~/.bash_profile
 ln -sfv "$DOTFILES_DIR/alias/bash_aliases" ~/.bash_aliases
-ln -sfv "$DOTFILES_DIR/system/.inputrc" ~/.inputrc
+ln -sfv "$DOTFILES_DIR/system/inputrc" ~/.inputrc
 ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/system/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
@@ -71,7 +71,10 @@ case "$1" in
 	;;
 	git)
 		if [ ! -d "$HOME/.git" ]; then
-			cd ~ && mkdir .git && cd ~/.git/ && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -
+			cd ~ && mkdir .git && cd ~/.git/ && cd -
+		fi
+		if [ ! -d "$HOME/.git/git-completion.bash" ]; then
+			cd $HOME/.git && wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && cd -
 		fi
 	;;
 	ruby)
@@ -103,11 +106,10 @@ case "$1" in
 		gem install ecl
 
 		pip install -U pip
-		pip install awscli virtualenv
-		sudo pip install virtualenvwrapper
+		sudo pip install virtualenv virtualenvwrapper
 
 		# AWS CLI
-		pip install awscli --upgrade --user
+		sudo pip install awscli --upgrade --user
 
 		# Disable Character Accent Menu
 		defaults write -g ApplePressAndHoldEnabled -bool false
