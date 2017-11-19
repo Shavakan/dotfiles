@@ -15,6 +15,7 @@ brew "golang"
 brew "node"
 brew "npm"
 brew "docker"
+brew "kubectl"
 
 brew "gnupg"
 brew "gnupg2"
