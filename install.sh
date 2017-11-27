@@ -88,7 +88,7 @@ case "$1" in
 		sudo xcodebuild -license
 	;;
 	redis)
-		redis-server "/usr/local/etc/redis.conf"
+		sudo redis-server "/usr/local/etc/redis.conf"
 		echo "$ redis-cli ping" && redis-cli ping
 	;;
 	all)

@@ -50,6 +50,10 @@ Plugin 'tpope/vim-commentary'
 Plugin 'hashivim/vim-hashicorp-tools'
 " A (Neo)Vim Autocompletion and linter for Terraform, a HashiCorp tool
 Plugin 'juliosueiras/vim-terraform-completion'
+" React JSX syntax highlighting and indenting for vom.
+Plugin 'mxw/vim-jsx'
+" Syntax Highlight for Vue.js components
+Plugin 'posva/vim-vue'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,6 +77,9 @@ syn sync fromstart
 filetype plugin indent on
 
 " AUTOCMD {{ ------------------------------------------------------
+autocmd BufRead,BufNewFile *.capnp set filetype=capnp
+autocmd BufRead,BufNewFile *.tf set filetype=terraform
+
 if has("autocmd")
         aug vimrc
         au!
@@ -85,13 +92,16 @@ if has("autocmd")
         au FileType html setl ts=8 sw=2 sts=2 et
         au FileType css setl ts=8 sw=4 sts=4 et
         au FileType javascript setl ts=2 sw=2 sts=2 et
-        au FileType tf setl ts=8 sw=2 sts=2 et
+        au FileType terraform setl ts=8 sw=2 sts=2 et
         au FileType cpp setl ts=8 sw=4 sts=4 et
         au FileType java setl ts=4 sw=4 sts=0 noet
         au FileType php setl ts=8 sw=4 sts=4 et
         au FileType asp setl ts=8 sw=4 sts=4 et
         au FileType jsp setl ts=8 sw=4 sts=4 et
         au FileType ruby setl ts=8 sw=4 sts=4 et
+        au FileType capnp setl ts=2 sw=2 sts=2 et
+        au FileType jsx sync fromstart ts=2 sw=2 sts=2 et
+        au FileType vue syntax sync fromstart ts=2 sw=2 sts=2 et
         au FileType text setl tw=80
 
         " resotre cursor position when the ifle has beenr ead
