@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -70,22 +71,29 @@ esac
 
 # Set LS_COLORS
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  test -r $HOME/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+# Prevent shell scripting mistakes (but not every mistakes!)
+# set -euo pipefail; IFS=$'\n\t'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    source $HOME/.bash_aliases
 fi
 
-# Company-only aliases (not checked-in to remote repository)
-if [ -f ~/.devsisters_aliases ]; then
-    . ~/.devsisters_aliases
+# Organization-only aliases and shell scripts (not checked-in to remote repository)
+if [ -f $HOME/.devsisters.sh ]; then
+    source $HOME/.devsisters.sh
 fi
+# if [ -f $HOME/vault.sh ]; then
+#     source $HOME/vault.sh
+# fi
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -130,7 +138,8 @@ PS2='\[\033[01;36m\]>'
 export PATH="$PATH:/usr/local/sbin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.git/git-completion.bash
+
+source $HOME/.git/git-completion.bash
 
 # macOS Notification
 # Usage: (some task that takes long time); notify End Task
@@ -165,10 +174,6 @@ export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/default
 export DOCKER_TLS_VERIFY=1
 # for Mac you apparently need to unset Docker env vars
 unset ${!DOCKER*}
-
-if [ -f $HOME/vault.sh ]; then
-    source $HOME/vault.sh
-fi
 
 # AWS CLI Completer
 complete -C '$(which aws_completer)' aws

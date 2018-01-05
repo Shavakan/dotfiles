@@ -9,7 +9,7 @@ alias f="fuck"
 
 # Git aliases
 alias gb="echo 'git branch' && git branch"
-glias gba="echo 'git branch -a' && git branch -a"
+alias gba="echo 'git branch -a' && git branch -a"
 alias gs="echo 'git status' && git status"
 alias gsl="echo 'git stash list' && git stash list"
 alias gsp="echo 'git stash pop' && git stash pop"

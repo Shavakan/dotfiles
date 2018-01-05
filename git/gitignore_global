@@ -1,2 +1,5 @@
 # Go delve test file
 debug.test
+
+# Vim swap files
+.sw[op]

@@ -35,7 +35,7 @@ ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/system/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
 ln -sfv "$DOTFILES_DIR/git/gitignore_global" ~/.gitignore_global
-ln -sfv "/keybase/private/changwonlee/devsisters_alias" ~/.devsisters_alias
+ln -sfv "/keybase/private/changwonlee/devsisters.sh" ~/.devsister.sh
 
 if [ ! -d "$HOME/workspace" ]; then
 	mkdir $HOME/workspace
