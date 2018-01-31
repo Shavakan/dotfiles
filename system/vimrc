@@ -79,6 +79,7 @@ filetype plugin indent on
 " AUTOCMD {{ ------------------------------------------------------
 autocmd BufRead,BufNewFile *.capnp set filetype=capnp
 autocmd BufRead,BufNewFile *.tf set filetype=terraform
+autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
 
 if has("autocmd")
         aug vimrc
@@ -134,6 +135,7 @@ set noet bs=2 ts=4 sw=8 sts=0           " -- tabstop
 set noai nosi hls is ic cf ws scs magic " -- search
 set nu ru sc wrap ls=2 lz               " -- appearance
 set expandtab                           " -- tab as spaces
+set clipboard=unnamed                   " -- clipboard usage on macOS
 
 " encoding and file format
 set fenc=utf-8 ff=unix ffs=unix,dos,mac
