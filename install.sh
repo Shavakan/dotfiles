@@ -36,6 +36,7 @@ ln -sfv "$DOTFILES_DIR/system/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
 ln -sfv "$DOTFILES_DIR/git/gitignore_global" ~/.gitignore_global
 ln -sfv "/keybase/private/changwonlee/devsisters.sh" ~/.devsister.sh
+ln -sfv "/keybase/private/changwonlee/shavakan_180131.pem" ~/.ssh/shavakan_180131
 
 if [ ! -d "$HOME/workspace" ]; then
 	mkdir $HOME/workspace
@@ -53,6 +54,7 @@ else
 	cat ~/.ssh/id_rsa.pub 
 	echo "RSA pubkey generated."
 fi
+ssh-add
 
 case "$1" in
 	brew)
