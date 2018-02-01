@@ -35,8 +35,9 @@ ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/system/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/Brewfile" ~
 ln -sfv "$DOTFILES_DIR/git/gitignore_global" ~/.gitignore_global
-ln -sfv "/keybase/private/changwonlee/devsisters.sh" ~/.devsister.sh
+ln -sfv "$DOTFILES_DIR/system/eclrc" ~/.eclrc
 ln -sfv "/keybase/private/changwonlee/shavakan_180131.pem" ~/.ssh/shavakan_180131
+ln -sfv "/keybase/private/changwonlee/devsisters.sh" ~/.devsisters.sh
 
 if [ ! -d "$HOME/workspace" ]; then
 	mkdir $HOME/workspace
@@ -62,6 +63,7 @@ case "$1" in
 		brew update
 		brew tap homebrew/bundle
 		cd ~ && brew bundle && cd -
+    gem install bundler
 	;;
 	vim)
 		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
