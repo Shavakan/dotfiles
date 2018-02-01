@@ -35,6 +35,8 @@ tap "homebrew/services"
 
 brew "mas"
 brew "thefuck"
+brew "ffmpeg"
+brew "gifsicle"
 
 cask_args appdir: "/Applications"
 tap "caskroom/cask"
