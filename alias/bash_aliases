@@ -25,3 +25,5 @@ alias dsp="echo 'docker system prune' && docker system prune"
 # AWS CLI Eclair alias
 alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl"
 
+# Terraform
+alias tf="terraform"
