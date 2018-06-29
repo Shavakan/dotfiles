@@ -165,6 +165,8 @@ export PATH="$PATH:/usr/local/mysql/bin"
 # Python mkvirtualenvwrapper paths
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
+eval "$(pyenv init -)"
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Docker
@@ -176,4 +178,5 @@ export DOCKER_TLS_VERIFY=1
 unset ${!DOCKER*}
 
 # AWS CLI Completer
+
 complete -C '$(which aws_completer)' aws
