@@ -28,8 +28,6 @@ alias dsp="echo 'docker system prune' && docker system prune"
 alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl"
 
 # Terraform
-alias tf="terraform"
-
-# Jekyll
-alias bejs="echo 'bundle exec jekyll serve' && bundle exec jekyll serve"
-
+alias tf="AWS_PROFILE=saml terraform"
+alias tf0.11="echo 'brew unlink terraform && brew link --overwrite --force terraform@0.11 && terraform version' && brew unlink terraform && brew link --overwrite --force terraform@0.11 && terraform version"
+alias tf0.12="echo 'brew unlink terraform@0.11 && brew link --overwrite terraform && terraform version' && brew unlink terraform@0.11 && brew link --overwrite terraform && terraform version"

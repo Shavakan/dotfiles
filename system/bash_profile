@@ -223,6 +223,7 @@ export PATH="$PATH:/usr/local/bin/elixir"
 
 # Go paths
 export GOPATH=$HOME/workspace/go
+export GOROOT=
 export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOPATH:$GOBIN"
 export GO111MODULE=on
