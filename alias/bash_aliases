@@ -29,3 +29,7 @@ alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=
 
 # Terraform
 alias tf="terraform"
+
+# Jekyll
+alias bejs="echo 'bundle exec jekyll serve' && bundle exec jekyll serve"
+
