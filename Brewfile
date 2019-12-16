@@ -20,10 +20,10 @@ brew "npm"
 brew "docker"
 brew "kubectl"
 
-brew "terraform"
+brew "tfenv"
 brew "packer"
 brew "consul"
-brew "consul-template"
+brew "vault"
 
 brew "gnupg"
 brew "gnupg2"
