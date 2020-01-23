@@ -34,6 +34,9 @@ brew "grep"
 brew "openssh"
 brew "rg"
 
+brew "kubernetes-cli"
+brew "kubectx"
+
 brew "mongodb"
 tap "homebrew/services"
 

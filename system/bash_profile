@@ -234,9 +234,12 @@ export SAML2AWS_SESSION_DURATION=43200
 export AWS_SDK_LOAD_CONFIG=1
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=$PATH:$HOME/.istioctl/bin
 
 # tfenv
 export PATH="$HOME/.tfenv/bin:$PATH"
 
 
-rvm 2.6.3
+
+
+# rvm 2.6.3
