@@ -239,6 +239,9 @@ export PATH=$PATH:$HOME/.istioctl/bin
 # tfenv
 export PATH="$HOME/.tfenv/bin:$PATH"
 
+# Kubectl
+source <(kubectl completion bash)
+
 
 
 

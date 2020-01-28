@@ -4,6 +4,8 @@
 alias pu="pushd ."
 alias po="popd"
 
+alias watch="watch "
+
 alias cdw="cd $HOME/workspace/ && ls"
 alias f="fuck"
 
@@ -29,5 +31,12 @@ alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=
 
 # Terraform
 alias tf="terraform"
-alias tf0.11="echo 'brew unlink terraform && brew link --overwrite --force terraform@0.11 && terraform version' && brew unlink terraform && brew link --overwrite --force terraform@0.11 && terraform version"
-alias tf0.12="echo 'brew unlink terraform@0.11 && brew link --overwrite terraform && terraform version' && brew unlink terraform@0.11 && brew link --overwrite terraform && terraform version"
+
+# Kubernetes
+alias kg="kubectl get"
+alias kgp="kubectl get pods"
+alias kgn="kubectl get nodes"
+alias kd="kubectl describe"
+alias kdp="kubectl describe pods"
+alias kdn="kubectl describe nodes"
+alias kl="kubectl logs"
