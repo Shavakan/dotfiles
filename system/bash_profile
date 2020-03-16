@@ -87,10 +87,11 @@ source $HOME/.bash_aliases
 fi
 
 # Organization-only aliases and shell scripts (not checked-in to remote repository)
-# if [ -f $HOME/.devsisters.sh ]; then
-# source $HOME/.devsisters.sh
-# fi
-source $HOME/devsisters.sh
+if [ -f $HOME/.devsisters.sh ]; then
+    ln -sf /Volumes/Keybase/private/changwonlee/devsisters.sh $HOME/.devsisters.sh
+    source $HOME/.devsisters.sh
+fi
+# source $HOME/devsisters.sh
 
 
 # enable color support of ls and also add handy aliases
