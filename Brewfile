@@ -116,24 +116,8 @@ cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "webstorm"
-mas "Airmail", id: 918858936
-mas "Amphetamine", id: 937984704
-mas "Be Focused", id: 973134470
-mas "Disk Space Pro", id: 636899298
-mas "GarageBand", id: 682658836
-mas "Harvest", id: 506189836
-mas "Live Wallpaper", id: 1246164382
-mas "Magnet", id: 441258766
-mas "Microsoft Remote Desktop", id: 715768417
-mas "Noted", id: 1446580517
-mas "PhotoScape X", id: 929507092
-mas "Quip", id: 1003160018
-mas "Spark", id: 1176895641
-mas "Todoist", id: 585829637
-mas "TweetDeck", id: 485812721
-mas "Ulysses", id: 1225570693
-mas "WhatSize", id: 413702125
-mas "Xcode", id: 497799835
-mas "무비스트", id: 461788075
-mas "베어", id: 1091189122
-mas "카카오톡", id: 869223134
+cask "couchbase-server-enterprise"
+cask "notion"
+cask "keybase"
+cask "insomnia"
+cask "discord"
