@@ -33,6 +33,7 @@ alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=
 alias tf="terraform"
 
 # Kubernetes
+alias k="kubectl"
 alias kg="kubectl get"
 alias kgp="kubectl get pods"
 alias kgn="kubectl get nodes"

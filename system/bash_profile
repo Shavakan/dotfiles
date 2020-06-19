@@ -82,16 +82,16 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f $HOME/.bash_aliases ]; then
+# TODO(changwon): checkout dotfiles repository if needed
+if [ ! -h $HOME/.bash_aliases ]; then
+  ln -s $HOME/dotfiles/alias/bash_aliases $HOME/.bash_aliases
+fi
 source $HOME/.bash_aliases
-fi
 
-# Organization-only aliases and shell scripts (not checked-in to remote repository)
-if [ -f $HOME/.devsisters.sh ]; then
-    ln -sf /Volumes/Keybase/private/changwonlee/devsisters.sh $HOME/.devsisters.sh
-    source $HOME/.devsisters.sh
+# tmux conf
+if [ ! -h $HOME/.tmux.conf ]; then
+  ln -s $HOME/dotfiles/alias/tmux.conf $HOME/.tmux.conf
 fi
-# source $HOME/devsisters.sh
 
 
 # enable color support of ls and also add handy aliases
@@ -210,6 +210,14 @@ export GO111MODULE=on
 export PATH="$PATH:/usr/local/mysql/bin"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Organization-only aliases and shell scripts (not checked-in to remote repository)
+# Should come after Go paths
+if [ ! -h $HOME/.devsisters.sh ]; then
+  ln -s /Volumes/Private/Keybase/private/changwonlee/devsisters.sh $HOME/.devsisters.sh
+fi
+source $HOME/.devsisters.sh
+
 
 
 # Python mkvirtualenvwrapper paths
