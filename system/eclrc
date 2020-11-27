@@ -24,6 +24,10 @@ Eclair.configure do |config|
       "openvpnas"
     when /strongswan/
       "ec2-user"
+    when /kubernetes|k8s|eks/
+     "admin"
+   when /windows|winsrv/i
+     "devadmin"
     else
       puts "Unknown image name '#{image.name}'. Fallback to '#{fallback_username}'"
       fallback_username
@@ -78,5 +82,5 @@ Eclair.configure do |config|
 
   # ssh_hostname - Hostname to use for ssh.
   # You can choose from :public_dns_name, :public_ip_address, :private_dns_name, :private_ip_address
-  config.ssh_hostname = :auto
+  # config.ssh_hostname = :auto
 end

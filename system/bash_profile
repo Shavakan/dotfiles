@@ -92,6 +92,7 @@ source $HOME/.bash_aliases
 if [ ! -h $HOME/.tmux.conf ]; then
   ln -s $HOME/dotfiles/alias/tmux.conf $HOME/.tmux.conf
 fi
+# source $HOME/devsisters.sh
 
 
 # enable color support of ls and also add handy aliases
@@ -252,6 +253,14 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 source <(kubectl completion bash)
 
 
+# Organization-only aliases and shell scripts (not checked-in to remote repository)
+if [ -f $HOME/.devsisters.sh ]; then
+    ln -sf /Volumes/Keybase/private/changwonlee/devsisters.sh $HOME/.devsisters.sh
+    source $HOME/.devsisters.sh
+fi
 
 
 # rvm 2.6.3
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"

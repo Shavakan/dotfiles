@@ -2,13 +2,16 @@
 debug.test
 
 # Vim swap files
-.sw[op]
+*.sw[op]
 
 # Vim pylint plugin
 .ropeproject/
 
 # macOS
-.DS_Store
+.DS_Store/
 
 # VS Code
 .vscode/
+
+# IntelliJ
+.idea/
