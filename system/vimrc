@@ -54,6 +54,8 @@ Plugin 'juliosueiras/vim-terraform-completion'
 Plugin 'mxw/vim-jsx'
 " Syntax Highlight for Vue.js components
 Plugin 'posva/vim-vue'
+" Jsonnet filetype plugin for Vim.
+" Plugin 'google/vim-jsonnet'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

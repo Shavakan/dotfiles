@@ -8,7 +8,8 @@
 	excludesfile = ~/.gitignore_global
 [user]
 	name = ChangWon Lee 
-	email = changwon.lee@devsisters.com
+	email = cs.changwon.lee@gmail.com
+	signingkey = 8726F784C87639E4
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
@@ -30,9 +31,11 @@
 	trustExitCode = true
 [url "git@github.com:devsisters/"]
 	insteadOf = https://github.com/devsisters/
-[url "https://2d7e67a082c2f6986e64c727fab3b2e0f4b2ae51:x-oauth-basic@github.com/devsisters"]
-	insteadOf = https://github.com/devsisters
 [url "https://shavakan2d7e67a082c2f6986e64c727fab3b2e0f4b2ae51:x-oauth-basic@github.com/devsisters"]
 	insteadOf = https://github.com/devsisters
 [url "https://shavakan2d7e67a082c2f6986e64c727fab3b2e0f4b2ae51:x-oauth-basic@github.com"]
 	insteadOf = https://github.com
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
