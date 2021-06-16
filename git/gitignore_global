@@ -15,3 +15,7 @@ debug.test
 
 # IntelliJ
 .idea/
+
+# Terraform
+.tool-versions
+.terraform.lock.hcl
