@@ -264,3 +264,9 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 . /usr/local/opt/asdf/asdf.sh
 
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# Hook direnv into your shell.
+eval "$(asdf exec direnv hook bash)"
+
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }
