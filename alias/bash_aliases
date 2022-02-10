@@ -1,5 +1,7 @@
 
 # List of custom aliases
+alias vi="nvim"
+alias vim="nvim"
 
 alias cdw="cd $HOME/workspace/ && ls"
 
