@@ -38,10 +38,9 @@ ln -sfv "$DOTFILES_DIR/git/gitignore_global" ~/.gitignore_global
 ln -sfv "$DOTFILES_DIR/system/eclrc" ~/.eclrc
 ln -sfv "/Volume/Keybase/private/changwonlee/shavakan_180131.pem" ~/.ssh/shavakan_180131
 ln -sfv "/Volume/Keybase/private/changwonlee/devsisters.sh" ~/.devsisters.sh
+VSCODE_SETTINGS_DIR=$HOME/Library/Application\ Support/Code/User/ mkdir -p $VSCODE_SETTINGS_DIR && ln -svf $VSCODE_SETTINGS_DIR/vscode_settings.json 
 
-if [ ! -d "$HOME/workspace" ]; then
-	mkdir $HOME/workspace
-fi
+mkdir -p $HOME/workspace
 
 # Create SSH keygen (RSA pubkey) if one does not exist.
 
