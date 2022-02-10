@@ -1,13 +1,7 @@
 
 # List of custom aliases
 
-alias pu="pushd ."
-alias po="popd"
-
-alias watch="watch "
-
 alias cdw="cd $HOME/workspace/ && ls"
-alias f="fuck"
 
 # Git aliases
 alias gb="echo 'git branch' && git branch"
@@ -26,9 +20,6 @@ alias grhh="echo 'git reset --hard HEAD' && git reset --hard HEAD"
 alias dp="echo 'docker ps' && docker ps"
 alias dsp="echo 'docker system prune' && docker system prune"
 
-# AWS CLI Eclair alias
-alias myecl="echo 'AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl' && AWS_PROFILE=my AWS_REGION=ap-northeast-2 ecl"
-
 # Terraform
 alias tf="terraform"
 
@@ -37,6 +28,7 @@ alias k="kubectl"
 alias kg="kubectl get"
 alias kgp="kubectl get pods"
 alias kgn="kubectl get nodes"
+alias kge="kubectl get events"
 alias kd="kubectl describe"
 alias kdp="kubectl describe pods"
 alias kdn="kubectl describe nodes"

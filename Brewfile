@@ -64,6 +64,7 @@ brew "mtr"
 brew "mysql", restart_service: true, link: false
 brew "mysql-client"
 brew "mysql@5.7", restart_service: true, link: true
+brew "neovim"
 brew "nginx"
 brew "nmap"
 brew "node"
