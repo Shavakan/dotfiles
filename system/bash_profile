@@ -218,7 +218,7 @@ source $HOME/.devsisters.sh
 # Python mkvirtualenvwrapper paths
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -266,3 +266,4 @@ eval "$(asdf exec direnv hook bash)"
 
 # A shortcut for asdf managed direnv.
 direnv() { asdf exec direnv "$@"; }
+

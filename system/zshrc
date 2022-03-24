@@ -84,6 +84,9 @@ export GO111MODULE=on
 export SAML2AWS_SESSION_DURATION=43200
 export AWS_SDK_LOAD_CONFIG=1
 
+export KUBECONFIG=$HOME/.kube/config
+export KUBE_CONFIG_PATH=$KUBECONFIG
+
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH=$PATH:$HOME/.istioctl/bin
 
