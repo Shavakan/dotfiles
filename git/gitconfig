@@ -4,7 +4,7 @@
 #	name = ChangWon Lee
 #	email = chiyah92@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
 [user]
 	name = ChangWon Lee 
@@ -14,6 +14,8 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
 	tool = vimdiff
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c '$wincmd J'
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -21,14 +23,12 @@
 	required = true
 [mergetool]
 	keepBackup = false
+
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [url "git@github.com:devsisters/"]
 	insteadOf = https://github.com/devsisters/
 [url "https://shavakan2d7e67a082c2f6986e64c727fab3b2e0f4b2ae51:x-oauth-basic@github.com/devsisters"]
