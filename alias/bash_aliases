@@ -2,6 +2,7 @@
 # List of custom aliases
 alias vi="nvim"
 alias vim="nvim"
+alias vimdiff="nvim -d"
 
 alias cdw="cd $HOME/workspace/ && ls"
 
@@ -17,6 +18,7 @@ alias gfp="echo 'git fetch --prune' && git fetch --prune && git branch -r | awk 
 alias gfpdr="echo 'git fetch --prune --dry-run' && git fetch --prune --dry-run"
 alias gsur="echo 'git submodule update --recursive' && git submodule update --recursive"
 alias grhh="echo 'git reset --hard HEAD' && git reset --hard HEAD"
+alias gprr="echo 'git pull --rebase' && git pull --rebase"
 
 # Docker aliases
 alias dp="echo 'docker ps' && docker ps"
@@ -24,6 +26,7 @@ alias dsp="echo 'docker system prune' && docker system prune"
 
 # Terraform
 alias tf="terraform"
+alias tpl="echo 'terraform providers lock -platform=windows_amd64 -platform=linux_amd64 -platform=darwin_amd64 -platform=darwin_arm64' && terraform providers lock -platform=windows_amd64 -platform=linux_amd64 -platform=darwin_amd64 -platform=darwin_arm64"
 
 # Kubernetes
 alias k="kubectl"

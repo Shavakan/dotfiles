@@ -216,11 +216,12 @@ source $HOME/.devsisters.sh
 
 
 # Python mkvirtualenvwrapper paths
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/workspace
-# eval "$(pyenv init -)"
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/workspace
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Docker
 export DOCKER_HOST=tcp://192.168.99.100:2376
@@ -245,6 +246,7 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 
 # Kubectl
 source <(kubectl completion bash)
+export KUBE_EDITOR=nvim
 
 
 # Organization-only aliases and shell scripts (not checked-in to remote repository)
@@ -257,13 +259,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
-. /usr/local/opt/asdf/asdf.sh
-
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-# Hook direnv into your shell.
-eval "$(asdf exec direnv hook bash)"
-
-# A shortcut for asdf managed direnv.
-direnv() { asdf exec direnv "$@"; }
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
