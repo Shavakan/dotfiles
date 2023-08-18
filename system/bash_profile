@@ -119,63 +119,21 @@ if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
 
-# Prompt function start
-RPROMPT='%{$(echotc UP 1)%}$(_aws_kube_tf)%{$(echotc DO 1)%}'
-
-function git_branch() { 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/';
-}
-
-# function _curr_tf() {
-# if [[ -d .terraform ]]; then
-# cat .terraform/environment 2>/dev/null || print 'none'
-#   fi
-# }
-
-function _aws_kube_tf() {
-  aws=$(_curr_aws)
-  k8s=$(_curr_kube)
-  tf=$(_curr_tf)
-  color='green'
-
-  echo $marker' '$(_decor aws $color $aws)' '$(_decor tf $color $tf)' '$(_decor k8s $color $k8s)
-}
-
-
-function _curr_kube() {
-  if [[ -f ~/.kube/config ]]; then
-context=$(cat ~/.kube/config | grep "current-context:" | sed "s/current-context: //")
-echo ' '$context
-  fi
-}
-
-function _curr_aws() {
-  if [[ -n $AWS_PROFILE ]]; then
-echo ' '$AWS_PROFILE
-  fi
-}
-
-function _decor() {
-  if [[ ! -z $3 ]]; then
-echo '('$1':%F{'$2'}'$3'%f)'
-  fi
-}
-# Prompt function end
-
 export LANG=en_US.UTF-8
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-LC_ALL=en_US.utf8
+LC_ALL=en_US.utf-8
 HOST='\e[2;36m\]@\h\e[0m'
 TIME='\e[1;31m\]\D{%FT%T} \e[1;32m'
 # LOCATION=':\033[01;34m\]`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"`'
 PWDLOCATION=':\e[1;94m\W/\e[0m'
 GITBRANCH=' \e[33mgit [ \e[1;33m$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")\e[0;33m ]\e[0m'
+AWSENV='\e[32m aws [ \e[1;32m$(echo $AWSCTX 2>/dev/null)\e[0;32m ]\e[0m'
 TFENV='\e[35m tf [ \e[1;35m$(cat .terraform/environment 2>/dev/null)\e[0;35m ]\e[0m'
 K8SENV='\e[96m k8s [ \e[1;96m$(cat ~/.kube/config | grep "current-context:" | sed "s/current-context: //")\e[0;96m ]\e[0m'
 # $(cat ~/.kube/config | grep "current-context:" | sed "s/current-context: //")
 _PROMPT='\n\$ '
-PS1=$TIME$USER$HOST$PWDLOCATION$GITBRANCH$TFENV$K8SENV$_PROMPT
+PS1=$TIME$PWDLOCATION$GITBRANCH$AWSENV$TFENV$K8SENV$_PROMPT
 PS2='\e[1;36m>'
 
 
@@ -264,3 +222,4 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
