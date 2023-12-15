@@ -1,9 +1,5 @@
 
 # List of custom aliases
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-
 alias cdw="cd $HOME/workspace/ && ls"
 
 # Git aliases
@@ -38,3 +34,8 @@ alias kd="kubectl describe"
 alias kdp="kubectl describe pods"
 alias kdn="kubectl describe nodes"
 alias kl="kubectl logs"
+
+# Vim / Neovim
+alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"

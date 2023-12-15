@@ -115,44 +115,7 @@ export PATH=$PATH:$HOME/.istioctl/bin
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# List of custom aliases
-alias cdw="cd $HOME/workspace/ && ls"
-
-# Git aliases
-alias gb="echo 'git branch' && git branch"
-alias gba="echo 'git branch -a' && git branch -a"
-alias gs="echo 'git status' && git status"
-alias gsl="echo 'git stash list' && git stash list"
-alias gsp="echo 'git stash pop' && git stash pop"
-alias gd="echo 'git diff' && git diff"
-alias gds="echo 'git diff --staged' && git diff --staged"
-alias gfp="echo 'git fetch --prune' && git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
-alias gfpdr="echo 'git fetch --prune --dry-run' && git fetch --prune --dry-run"
-alias gsur="echo 'git submodule update --recursive' && git submodule update --recursive"
-alias grhh="echo 'git reset --hard HEAD' && git reset --hard HEAD"
-
-# Docker aliases
-alias dp="echo 'docker ps' && docker ps"
-alias dsp="echo 'docker system prune' && docker system prune"
-
-# Terraform
-alias tf="terraform"
-
-# Kubernetes
-alias k="kubectl"
-alias kg="kubectl get"
-alias kgp="kubectl get pods"
-alias kgn="kubectl get nodes"
-alias kge="kubectl get events"
-alias kd="kubectl describe"
-alias kdp="kubectl describe pods"
-alias kdn="kubectl describe nodes"
-alias kl="kubectl logs"
-
-# Neovim
-alias vim="nvim"
-alias vi="nvim"
+source $HOME/.bash_aliases
 
 # Organization-only aliases and shell scripts (not checked-in to remote repository)
 # Should come after Go paths
