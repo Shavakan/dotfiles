@@ -5,60 +5,73 @@
 
 scripte utf-8
 
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+
 "" Vundle configuration -------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
 " Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 " Vim-script library
-Plugin 'ascenator/L9'
+Plug 'ascenator/L9'
 " A tree explorer plugin for vim
-Plugin 'scrooloose/nerdtree.git'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/tagbar'
+Plug 'vim-airline/vim-airline'
 " Vim plugin to list, select and switch between buffers
-Plugin 'Buffergator'
+" Plug 'Buffergator'
 " A better JSON for Vim: distinct highlighting of keywords vs values,
 " JSON-specific (non-JS) warnings, quote concealing
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 " HTML5 omnicomplete and syntax
-Plugin 'othree/html5.vim'
+Plug 'othree/html5.vim'
 " Add CSS3 syntax support to vim's built-in 'syntax/css.vim'
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax'
 " Vim python-mode, PyLint, Rope, Pydoc, breakpoints from box
-Plugin 'klen/python-mode'
+Plug 'klen/python-mode'
 " Syntax checking hacks for vim
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Vim Git runtime files
-Plugin 'tpope/vim-git'
+Plug 'tpope/vim-git'
 " A Git wrapper so awesome, it should be illegal
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " A git commit browser
-Plugin 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim'
 " One colorscheme pack to rule them all!
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 " Make Vim persist editing state without fuss
-Plugin 'kopischke/vim-stay'
+Plug 'kopischke/vim-stay'
 " Vastly improved Javascript indentation and syntax support in Vim
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 " commentary.vim: comment stuff out
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " `self-contained and faily explanatory` agglomeration of HashiVim plugins
-Plugin 'hashivim/vim-hashicorp-tools'
+Plug 'hashivim/vim-hashicorp-tools'
 " A (Neo)Vim Autocompletion and linter for Terraform, a HashiCorp tool
-Plugin 'juliosueiras/vim-terraform-completion'
+Plug 'juliosueiras/vim-terraform-completion'
 " React JSX syntax highlighting and indenting for vom.
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 " Syntax Highlight for Vue.js components
-Plugin 'posva/vim-vue'
+Plug 'posva/vim-vue'
 " Jsonnet filetype plugin for Vim.
-" Plugin 'google/vim-jsonnet'
+" Plug 'google/vim-jsonnet'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()              " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
