@@ -123,7 +123,12 @@ if [ ! -e $HOME/.devsisters.sh ]; then
   ln -s /Volumes/Private/Keybase/private/changwonlee/devsisters.sh $HOME/.devsisters.sh
 fi
 
+export GPG_TTY=$(tty)
+
 source $HOME/.devsisters.sh
+
+# asdf vm
+. "$HOME/.asdf/asdf.sh"
 
 # tmux conf
 if [ ! -h $HOME/.tmux.conf ]; then
@@ -132,10 +137,3 @@ fi
 
 # saml2aws autocompletion
 eval "$(saml2aws --completion-script-zsh)"
-
-if [ -r ~/.zshrc ]; then echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zshrc; \
-  else echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zprofile; fi
-
-export GPG_TTY=$(tty)
-
-export GPG_TTY=$(tty)

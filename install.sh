@@ -72,7 +72,7 @@ else
 
     # Install and link gettext for libintl.8.dylib
     echo "Installing and linking gettext for NeoVim dependencies..."
-    brew install gettext
+    brew install gettext bash watch mtr rg
     brew link gettext --force
 fi
 
@@ -93,6 +93,33 @@ if [ -d "$HOME/.asdf" ]; then
 else
     echo "Installing asdf-vm..."
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+
+    # Adding a selection of plugins to asdf version manager
+    # asdf-community Plugins
+    asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+    asdf plugin add vault https://github.com/asdf-community/asdf-hashicorp.git
+    asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git
+    asdf plugin add kubectl https://github.com/asdf-community/asdf-kubectl.git
+    asdf plugin add k9s https://github.com/looztra/asdf-k9s.git
+    asdf plugin add scala https://github.com/asdf-community/asdf-scala.git
+    asdf plugin add scala-cli https://github.com/khernyo/asdf-scala-cli.git
+    # Other Plugins
+    asdf plugin add python https://github.com/danhper/asdf-python.git
+    asdf plugin add java https://github.com/halcyon/asdf-java.git
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf plugin add rust https://github.com/code-lever/asdf-rust.git
+    asdf plugin add helm https://github.com/Antiarchitect/asdf-helm.git
+    asdf plugin add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git
+    # Databases
+    asdf plugin add mysql https://github.com/iroddis/asdf-mysql.git
+    asdf plugin add cockroach https://github.com/salasrod/asdf-cockroach.git
+    asdf plugin add redis https://github.com/smashedtoatoms/asdf-redis.git
+    asdf plugin add mongodb https://github.com/sylph01/asdf-mongodb.git
+
+    # Execute asdf.sh script located in the same directory as this script
+    echo "Executing asdf.sh to install versions..."
+    "${DOTFILES_DIR}/asdf.sh"
 fi
 
 # GPG
