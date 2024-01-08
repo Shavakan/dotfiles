@@ -164,6 +164,10 @@ export PATH="$PATH:/usr/local/mysql/bin"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Docker path
+
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin"
+
 # Organization-only aliases and shell scripts (not checked-in to remote repository)
 # Should come after Go paths
 if [ ! -h $HOME/.devsisters.sh ]; then
@@ -224,3 +228,6 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 . $HOME/.asdf/completions/asdf.bash
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# direnv
+eval "$(direnv hook bash)"
