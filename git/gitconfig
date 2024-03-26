@@ -41,3 +41,4 @@
 	program = gpg
 [push]
 	autoSetupRemote = true
+	default = current

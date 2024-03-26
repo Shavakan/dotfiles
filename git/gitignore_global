@@ -19,3 +19,6 @@ debug.test
 # Terraform
 .tool-versions
 .terraform/
+
+# direnv
+.envrc
